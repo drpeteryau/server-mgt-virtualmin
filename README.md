@@ -24,7 +24,7 @@ sudo quotacheck -ugm /
 
 update
 sudo apt-get install php-intl php-zip 
-sudo apt-get install screen vim tree net-tools
+sudo apt-get install screen vim tree net-tools wget
 
 migrate: https://www.virtualmin.com/documentation/system/migrate/
 du -h --threshold=1G | sort -h

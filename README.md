@@ -1,31 +1,46 @@
-Grade A Supported Systems
+# Virtualmin Notes
+## Grade A Supported Systems
 Rocky, Alma, and RHEL 8 and 9 on x86_64
 CentOS and RHEL 7 on x86_64 (This version is extremely old and no longer recommended, please choose one of the above compatible systems instead.)
 Ubuntu 20.04 LTS and 22.04 LTS on i386 and amd64
 Debian 10, 11 and 12 on i386 and amd64
 
-virtualmin: 
+# Common Scripts
+## System update & upgrade
+```shell
+sudo apt update
+sudo apt upgrade
+sudo apt-get install php-intl php-zip
+sudo apt-get install screen vim tree net-tools wget
+sudo apt install quota
+```
+
+## Virtualmin
+```shell
+screen
 wget https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
 chmod 777 virtualmin-install.sh
 sudo ./virtualmin-install.sh
+```
 
-setup Quotas
-reference: https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04
-
+## Enable Quotas
+Reference: https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04
+```shell
+screen
 sudo apt update
 sudo apt install quota
 quota --version
 find /lib/modules/ -type f -name '*quota_v*.ko*'
 sudo apt install linux-image-extra-virtual
 sudo vim /etc/fstab
-usrquota,grpquota
+#usrquota,grpquota
 sudo mount -o remount /
 sudo quotacheck -ugm /
+```
 
-update
-sudo apt-get install php-intl php-zip 
-sudo apt-get install screen vim tree net-tools wget
-
-migrate: https://www.virtualmin.com/documentation/system/migrate/
+## Migrate
+Reference: https://www.virtualmin.com/documentation/system/migrate/
+```shell
 du -h --threshold=1G | sort -h
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+```

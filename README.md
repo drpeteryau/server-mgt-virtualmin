@@ -40,7 +40,7 @@ sudo apt update
 sudo apt install quota
 quota --version
 find /lib/modules/ -type f -name '*quota_v*.ko*'
-sudo apt install linux-image-extra-virtual
+sudo apt install linux-image-extra-virtual linux-modules-extra-aws
 sudo vim /etc/fstab
 #usrquota,grpquota
 sudo mount -o remount /

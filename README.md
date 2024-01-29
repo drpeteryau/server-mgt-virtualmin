@@ -1,9 +1,9 @@
 # Virtualmin Notes
 ## Grade A Supported Systems
-Rocky, Alma, and RHEL 8 and 9 on x86_64\
-CentOS and RHEL 7 on x86_64 (This version is extremely old and no longer recommended, please choose one of the above compatible systems instead.)\
-Ubuntu 20.04 LTS and 22.04 LTS on i386 and amd64\
-Debian 10, 11 and 12 on i386 and amd64
+- Rocky, Alma, and RHEL 8 and 9 on x86_64\
+- CentOS and RHEL 7 on x86_64 (This version is extremely old and no longer recommended, please choose one of the above compatible systems instead.)\
+- Ubuntu 20.04 LTS and 22.04 LTS on i386 and amd64\
+- Debian 10, 11 and 12 on i386 and amd64
 
 # Common Scripts
 ## System update & upgrade
@@ -66,5 +66,4 @@ Restart the SSH server for the new configuration to take effect:
 ```shell
 sudo /etc/init.d/ssh force-reload
 sudo /etc/init.d/ssh restart
-
 ```

@@ -57,6 +57,7 @@ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 
 # Common Configurations
 ## Configure Password-Based SSH Authentication
+Reference: https://docs.bitnami.com/virtual-machine/faq/get-started/enable-ssh-password/
 Edit the /etc/ssh/sshd_config and modify or add the following line:
 ```shell
 PasswordAuthentication yes

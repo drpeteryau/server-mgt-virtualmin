@@ -10,9 +10,18 @@ Debian 10, 11 and 12 on i386 and amd64
 ```shell
 sudo apt update
 sudo apt upgrade
+sudo apt-get install -y screen vim tree net-tools wget
+sudo apt-get install -y bcrypt
+```
+
+## Install PHP
+```shell
 sudo apt-get install php-intl php-zip
-sudo apt-get install screen vim tree net-tools wget
-sudo apt install quota
+```
+
+## Install Java
+```shell
+sudo apt install default-jdk
 ```
 
 ## Virtualmin

@@ -53,3 +53,17 @@ Reference: https://www.virtualmin.com/documentation/system/migrate/
 du -h --threshold=1G | sort -h
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 ```
+
+
+# Common Configurations
+## Configure Password-Based SSH Authentication
+Edit the /etc/ssh/sshd_config and modify or add the following line:
+```shell
+PasswordAuthentication yes
+```
+Restart the SSH server for the new configuration to take effect:
+```shell
+sudo /etc/init.d/ssh force-reload
+sudo /etc/init.d/ssh restart
+
+```

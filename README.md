@@ -67,3 +67,15 @@ Restart the SSH server for the new configuration to take effect:
 sudo /etc/init.d/ssh force-reload
 sudo /etc/init.d/ssh restart
 ```
+
+## Configure Password-Based SSH Authentication
+Reference: https://superuser.com/questions/1032251/multiple-ssh-connections-to-the-same-system-is-it-possible \
+MaxSessions Specifies the maximum number of open sessions permitted per network connection. The default is 10.
+```shell
+MaxSessions in /etc/ssh/sshd_config
+```
+Specifies the maximum number of concurrent unauthenticated connections to the SSH daemon... The default is 10.
+```shell
+#MaxStartups 10:30:60 usually commented in the /etc/ssh/sshd_config and by default set to 10
+```
+

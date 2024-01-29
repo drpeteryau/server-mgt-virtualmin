@@ -1,8 +1,8 @@
 # Virtualmin Notes
 ## Grade A Supported Systems
-Rocky, Alma, and RHEL 8 and 9 on x86_64
-CentOS and RHEL 7 on x86_64 (This version is extremely old and no longer recommended, please choose one of the above compatible systems instead.)
-Ubuntu 20.04 LTS and 22.04 LTS on i386 and amd64
+Rocky, Alma, and RHEL 8 and 9 on x86_64\
+CentOS and RHEL 7 on x86_64 (This version is extremely old and no longer recommended, please choose one of the above compatible systems instead.)\
+Ubuntu 20.04 LTS and 22.04 LTS on i386 and amd64\
 Debian 10, 11 and 12 on i386 and amd64
 
 # Common Scripts
@@ -57,7 +57,7 @@ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 
 # Common Configurations
 ## Configure Password-Based SSH Authentication
-Reference: https://docs.bitnami.com/virtual-machine/faq/get-started/enable-ssh-password/
+Reference: https://docs.bitnami.com/virtual-machine/faq/get-started/enable-ssh-password/\
 Edit the /etc/ssh/sshd_config and modify or add the following line:
 ```shell
 PasswordAuthentication yes

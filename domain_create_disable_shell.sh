@@ -11,5 +11,6 @@ IFS=','
 while read domain
 do
 	virtualmin create-domain --domain $domain --pass "[default_password]" --plan "[plan_name]" --unix --dir --webmin --limits-from-plan
+	virtualmin disable-domain --domain $domain
 done < $INPUT
 IFS=$OLDIFS

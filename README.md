@@ -5,23 +5,43 @@
 - Ubuntu 20.04 LTS and 22.04 LTS on i386 and amd64\
 - Debian 10, 11 and 12 on i386 and amd64
 
+
+
 # Common Scripts
 ## System update & upgrade
 ```shell
-sudo apt update
-sudo apt upgrade
-sudo apt-get install -y screen vim tree net-tools wget
-sudo apt-get install -y bcrypt
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt install -y screen vim tree net-tools wget curl tree
+Remarks: cannot install bcrypt
 ```
 
-## Install PHP
+## Install Rust
 ```shell
-sudo apt-get install php-intl php-zip
+sudo apt install -y build-essential
+
+sudo su -
+export RUSTUP_HOME=/usr/local/lib/rustup
+export CARGO_HOME=/usr/local/cargo
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path --default-toolchain stable
+exit
+
+sudo tee /etc/profile.d/rust.sh > /dev/null <<'EOF'
+export CARGO_HOME=/usr/local/cargo
+export RUSTUP_HOME=/usr/local/lib/rustup
+export PATH="$CARGO_HOME/bin:$PATH"
+EOF
+
+sudo chmod +x /etc/profile.d/rust.sh
+
+rustc --version
+cargo --version
 ```
 
 ## Install Java
 ```shell
-sudo apt install default-jdk
+sudo apt install -y default-jdk
+java -version
 ```
 
 ## Virtualmin
@@ -30,6 +50,12 @@ screen
 wget https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
 chmod 777 virtualmin-install.sh
 sudo ./virtualmin-install.sh
+```
+
+## Install PHP (don't manually install this if Virtualmin will be used)
+```shell
+sudo apt-get install -y php-intl php-zip php-imagick
+php -version
 ```
 
 ## Enable Quotas

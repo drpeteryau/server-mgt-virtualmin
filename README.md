@@ -12,7 +12,7 @@
 ```shell
 sudo apt -y update
 sudo apt -y upgrade
-sudo apt install -y screen vim tree net-tools wget curl tree
+sudo apt install -y screen vim tree net-tools wget curl tree unzip
 Remarks: cannot install bcrypt
 ```
 
@@ -47,7 +47,7 @@ java -version
 ## Install PostgreSQL
 ```shell
 sudo apt install -y postgresql
-java -version
+pg_config --version
 ```
 
 ## Install Node and npm
@@ -56,8 +56,21 @@ sudo apt install -y nodejs npm
 node -v
 npm -v
 ```
+## Install Composer
+```shell
+curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
+php -r "if (hash_file('SHA384', '/tmp/composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
+composer
+```
 
-
+## Install Python
+```shell
+sudo apt install -y python3 python3-pip
+python3 --version
+pip3 --version
+Reference: https://go.lightnode.com/tech/install-pip-ubuntu?ref=b7022283&id=58&gad_source=1&gad_campaignid=21352691918&gbraid=0AAAAABPLrSmCieTLf08S-nXt-6NxjBL3n&gclid=CjwKCAjw87XBBhBIEiwAxP3_AyNmOsxjc6L4QLVko2WyVSJSLiHaQ3ple43WQYNXMYIyOX6bpSAwQBoCC98QAvD_BwE
+```
 
 ## Virtualmin
 ```shell
@@ -69,7 +82,7 @@ sudo ./virtualmin-install.sh
 
 ## Install PHP (don't manually install this if Virtualmin will be used)
 ```shell
-sudo apt-get install -y php-intl php-zip php-imagick
+sudo apt-get install -y php-intl php-zip php-imagick php-cli
 php -version
 ```
 

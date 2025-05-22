@@ -56,7 +56,22 @@ sudo ./virtualmin-install.sh
 ```shell
 sudo apt-get install -y php-intl php-zip php-imagick
 php -version
+//Format the partition
+sudo mkfs.ext4 /dev/nvme0n1p1
 ```
+
+## Config second drive
+```shell
+lsblk
+sudo fdisk /dev/nvme0n1 (given that nvme0n1 is the second drive)
+
+```
+
+
+
+
+
+
 
 ## Enable Quotas
 Reference: https://www.digitalocean.com/community/tutorials/how-to-set-filesystem-quotas-on-ubuntu-20-04

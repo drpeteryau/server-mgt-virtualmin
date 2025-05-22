@@ -44,6 +44,21 @@ sudo apt install -y default-jdk
 java -version
 ```
 
+## Install PostgreSQL
+```shell
+sudo apt install -y postgresql
+java -version
+```
+
+## Install Node and npm
+```shell
+sudo apt install -y nodejs npm
+node -v
+npm -v
+```
+
+
+
 ## Virtualmin
 ```shell
 screen
@@ -56,14 +71,35 @@ sudo ./virtualmin-install.sh
 ```shell
 sudo apt-get install -y php-intl php-zip php-imagick
 php -version
-//Format the partition
-sudo mkfs.ext4 /dev/nvme0n1p1
 ```
 
 ## Config second drive
 ```shell
+//List all drive
 lsblk
+
+//partition, Use n to create a new partition, then w to write and exit.
 sudo fdisk /dev/nvme0n1 (given that nvme0n1 is the second drive)
+
+//Format the partition
+sudo mkfs.ext4 /dev/nvme0n1p1
+
+//Mount Temporarily for Data Move
+sudo mkdir /mnt/newhome
+sudo mount /dev/nvme0n1p1 /mnt/newhome
+sudo rsync -aXS --exclude='/*/.gvfs' /home/. /mnt/newhome/.
+
+//Unmount /mnt/newhome
+sudo umount /mnt/newhome
+
+//Get UUID of the Partition
+sudo blkid /dev/nvme0n1p1
+
+//Edit fstab
+sudo nano /etc/fstab
+
+//Add a line at the end:
+
 
 ```
 

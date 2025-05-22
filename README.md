@@ -55,7 +55,9 @@ pg_config --version
 sudo apt install -y nodejs npm
 node -v
 npm -v
+Reference: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
 ```
+
 ## Install Composer
 ```shell
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
@@ -109,14 +111,13 @@ sudo umount /mnt/newhome
 sudo blkid /dev/nvme0n1p1
 
 //Edit fstab
-sudo nano /etc/fstab
-
-//Add a line at the end:
-
-
+sudo vim /etc/fstab
 ```
 
 
+Missing Steps
+Firewall port redirect
+SSH enable password
 
 
 
@@ -130,7 +131,7 @@ sudo apt update
 sudo apt install quota
 quota --version
 find /lib/modules/ -type f -name '*quota_v*.ko*'
-sudo apt install linux-image-extra-virtual linux-modules-extra-aws
+sudo apt install -y linux-image-extra-virtual linux-modules-extra-aws
 sudo vim /etc/fstab
 #usrquota,grpquota
 sudo mount -o remount /

@@ -9,11 +9,11 @@
 
 # Common Scripts
 ## System update & upgrade
+Remarks: cannot install bcrypt
 ```shell
 sudo apt -y update
 sudo apt -y upgrade
 sudo apt install -y screen vim tree net-tools wget curl tree unzip
-Remarks: cannot install bcrypt
 ```
 
 ## Install Rust
@@ -51,11 +51,11 @@ pg_config --version
 ```
 
 ## Install Node and npm
+Reference: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
 ```shell
 sudo apt install -y nodejs npm
 node -v
 npm -v
-Reference: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
 ```
 
 ## Install Composer
@@ -67,14 +67,21 @@ composer
 ```
 
 ## Install Python
+Reference: https://go.lightnode.com/tech/install-pip-ubuntu?ref=b7022283&id=58&gad_source=1&gad_campaignid=21352691918&gbraid=0AAAAABPLrSmCieTLf08S-nXt-6NxjBL3n&gclid=CjwKCAjw87XBBhBIEiwAxP3_AyNmOsxjc6L4QLVko2WyVSJSLiHaQ3ple43WQYNXMYIyOX6bpSAwQBoCC98QAvD_BwE
+
 ```shell
 sudo apt install -y python3 python3-pip
 python3 --version
 pip3 --version
-Reference: https://go.lightnode.com/tech/install-pip-ubuntu?ref=b7022283&id=58&gad_source=1&gad_campaignid=21352691918&gbraid=0AAAAABPLrSmCieTLf08S-nXt-6NxjBL3n&gclid=CjwKCAjw87XBBhBIEiwAxP3_AyNmOsxjc6L4QLVko2WyVSJSLiHaQ3ple43WQYNXMYIyOX6bpSAwQBoCC98QAvD_BwE
 ```
 
 ## Virtualmin
+Reference: https://forum.virtualmin.com/t/ubuntu-24-04-does-not-have-awscli/130361/2
+```shell
+snap install aws-cli --classic
+```
+
+## Install AWS CLI
 ```shell
 screen
 wget https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh

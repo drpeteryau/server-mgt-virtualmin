@@ -76,17 +76,17 @@ pip3 --version
 ```
 
 ## Virtualmin
-Reference: https://forum.virtualmin.com/t/ubuntu-24-04-does-not-have-awscli/130361/2
-```shell
-snap install aws-cli --classic
-```
-
-## Install AWS CLI
 ```shell
 screen
 wget https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
 chmod 777 virtualmin-install.sh
 sudo ./virtualmin-install.sh
+```
+
+## Install AWS CLI
+Reference: https://forum.virtualmin.com/t/ubuntu-24-04-does-not-have-awscli/130361/2
+```shell
+snap install aws-cli --classic
 ```
 
 ## Install PHP (don't manually install this if Virtualmin will be used)

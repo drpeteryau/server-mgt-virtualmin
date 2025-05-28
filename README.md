@@ -38,6 +38,33 @@ rustc --version
 cargo --version
 ```
 
+## Install Rust (system-wide, personal cargo in individual account)
+```shell
+# Become root or use sudo
+sudo -i
+# Create a directory for rustup system-wide
+mkdir -p /opt/rust
+# Set HOME temporarily to install rustup in /opt/rust
+export HOME=/opt/rust
+# Install rustup with default toolchain
+curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
+# Ensure binaries are accessible globally
+ln -s /opt/rust/.cargo/bin/* /usr/local/bin/
+# Make sure permissions allow execution by all users
+chmod -R a+rx /opt/rust/.cargo
+# Download stable Rust toolchain into /opt/rust/.rustup and sets the default toolchain globally for the rustup installation. 
+/opt/rust/.cargo/bin/rustup default stable
+# Confirm Global Toolchain
+/opt/rust/.cargo/bin/rustup show
+# examine and check
+echo $PATH
+which cargo
+cargo --version
+rustc --version
+git clone https://github.com/drpeteryau/csc1106-rust-hello-world.git
+git clone https://github.com/drpeteryau/csc1106-actix-hello-world
+```
+
 ## Install Java
 ```shell
 sudo apt install -y default-jdk
